@@ -1,0 +1,43 @@
+.div_main {
+   
+ 
+  }
+  
+  .hiddenStyles {
+
+  }
+.div_second
+{
+    
+   
+  }
+  .div_third
+{
+    width:'50%';
+    display:"flex";
+    flex-direction:'column';
+    border-radius:"0.625rem";
+    padding:'0.3rem';
+    margin:"0rem 0rem 1.2rem 0.25rem";
+    border-width:'2px';
+    border-color:"grey";
+    border:"solid";
+  }
+  .dropdown-menu {
+    background-color: white;
+    border: none;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    /* Adjust dropdown styles for smaller screens */
+    .dropdown-menu {
+      /* Modify styles for smaller screens */
+      /* For example: display as block and full width */
+      display: block;
+      width: 100%;
+    }
+  
+    /* Adjust other styles for better responsiveness */
+    /* ... */
+  }

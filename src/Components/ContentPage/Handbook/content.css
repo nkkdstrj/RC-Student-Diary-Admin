@@ -1,0 +1,18 @@
+.dropdown-menu li:hover {
+    background-color: transparent; /* Change this to whatever background color you want on hover */
+    color: black;
+  }
+
+  styles.button_add {
+    padding: '8px 16px';
+    background-color: '#24549A';
+    color: 'white';
+    border: 'none';
+    border-radius: '4px';
+    cursor: 'pointer';
+    box-shadow: '0 2px 4px rgba(0,0,0,0.2)';
+    transition: 'background-color 0.3s ease';
+    margin-left: '25px';
+    padding: '10px 35px 10px 35px';
+  }
+

@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
+import { Outlet, Route, Routes } from "react-router-dom";
+import Content from "./Components/ContentPage/Content";
+import File from "./Components/FilePage/FIles";
+import Login from "./Components/LoginPage/login";
+import Sidebar from "./Components/SideBar/sidebar";
+
+import Home from "./Components/HomePage/home";
+import ReminderPage from "./Components/ReminderPage/ReminderPage";
+import StudentManager from "./Components/StudentPage/StudentManager";
+
+const SidebarLayout = () => (
+  <>
+    <div className="container-scroller">
+      
+      {/* <Navbar /> */}
+      <Sidebar />
+      <Outlet />
+    </div>
+  </>
+);
+// const shet = () => (
+//   <>
+//     <div className="main-panel"></div>
+//   </>
+// );
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route element={<SidebarLayout />}>
+            <Route path="/dashboard" index element={<Home />}></Route>
+            <Route path="/content" element={<Content/>}></Route>
+            <Route path="/student/manager" element={<StudentManager/>}></Route>
+            <Route path="/reminder" element={<ReminderPage/>}></Route>
+         
+            <Route path="/file" element={<File />}></Route>
+         
+          </Route>         
+       
+      
+        </Routes>
+      </div>
+    </>
   );
 }
 

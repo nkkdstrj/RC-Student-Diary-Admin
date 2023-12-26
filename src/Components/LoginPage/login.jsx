@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import { onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../../firebase-config'; // Import the Firebase auth service
-import { Link } from "react-router-dom";
-import RC from "../../asset/RC.png";
-import RCBackground from "../../asset/rc1.jpg";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import { NoEncryption } from '@mui/icons-material';
+import RC from "../../Assets/RC.png";
+import RCBackground from "../../Assets/rc1.jpg";
+import { auth } from '../../firebase-config'; // Import the Firebase auth service
 
 function Login() {
   const [loginEmail, setLoginEmail] = useState('');

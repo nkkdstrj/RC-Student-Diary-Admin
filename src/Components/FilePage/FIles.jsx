@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import Trivia from './Trivia/trivia';
-// import FileDisplay from '../files/storage';
-import ContentEditor from './Handbook/contenteditor';
+import AudioManager from './audio';
+import StudentManager from './storagee';
 
-function Content() {
+function File() {
   const [showContentEditor, setShowContentEditor] = useState(true);
 
   const handleTriviaClick = () => {
@@ -13,12 +12,11 @@ function Content() {
   const handleHandbookClick = () => {
     setShowContentEditor(true);
   };
-
   return (
     <div className="content-wrapper" style={{ background: 'white' }}>
       <div className="">
         <div style={{ marginBottom: '30px', background: 'white' }}>
-          <h2>Content</h2>
+          <h1 className='font-weight-bold'>Storage</h1>
           <div className="row row-cols-2 row-cols-md-2 g-4">
             <div  className='col' style={{ textAlign: 'center' }} >
             <h3>
@@ -35,7 +33,7 @@ function Content() {
                   borderBottom: showContentEditor ? '3px solid #24549A' : 'none',
                 }}
               >
-                Handbook
+                Pdf
               </a></h3></div>
               <div  className='col' style={{ textAlign: 'center' }}>
             <h3>
@@ -52,19 +50,20 @@ function Content() {
                   borderBottom: !showContentEditor ? '3px solid #24549A' : 'none',
                 }}
               >
-                Trivia
+                Audio
                 </a></h3></div>
             
-            <hr style={{ marginTop: '-8px', width: '90%', margin: 'auto', height:'2px', border: '1px solid #24549A' }} />
+            <hr style={{ marginTop: '0px', width: '90%', margin: 'auto', height:'2px', border: '1px solid #24549A' }} />
           </div>
         </div>
 
         <div className="content">
-          {showContentEditor ? <ContentEditor /> : <Trivia />}
+          {showContentEditor ? <StudentManager /> : <AudioManager />}
         </div>
       </div>
     </div>
   );
 }
 
-export default Content;
+
+export default File;

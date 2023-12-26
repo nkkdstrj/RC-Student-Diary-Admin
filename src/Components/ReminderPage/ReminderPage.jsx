@@ -6,7 +6,7 @@ import { Button, Modal } from "react-bootstrap";
 import { AiFillCloseCircle, AiOutlineCaretLeft, AiOutlineCaretRight, AiOutlineEllipsis } from "react-icons/ai";
 import { BsFillPencilFill } from "react-icons/bs";
 import { app } from '../../firebase-config';
-import ReminderModal from "../Home/ReminderManagement/remindermodal";
+import ReminderModal from "./Reminder_Components/ReminderManagement/remindermodal";
 // import ReminderEditor from "../sfromreactfirebase/RMCOpy/remindereditor copy";
 
 const ReminderPage = () => {

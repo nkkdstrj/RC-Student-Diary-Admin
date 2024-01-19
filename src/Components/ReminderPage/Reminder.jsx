@@ -7,7 +7,6 @@ import { AiFillCloseCircle, AiOutlineCaretLeft, AiOutlineCaretRight, AiOutlineEl
 import { BsFillPencilFill } from "react-icons/bs";
 import { app } from '../../firebase-config';
 import ReminderModal from "./Reminder_Components/ReminderManagement/remindermodal";
-// import ReminderEditor from "../sfromreactfirebase/RMCOpy/remindereditor copy";
 
 const ReminderPage = () => {
   const [reminders, setReminders] = useState([]);
@@ -78,13 +77,32 @@ const ReminderPage = () => {
     };
 
   // Function to save the edited reminder
-  const saveEditedReminder = () => {
+  const saveEditedReminder = (selectedReminder) => {
     if (selectedReminder) {
       const userId = selectedReminder.userId;
       const date = selectedReminder.date;
+      const {eventInfo, eventName, eventTime } = selectedReminder
 
       const editedRemindersRef = ref(getDatabase(app), `PublicReminders/${userId}/${date}`);
-      update(editedRemindersRef, editReminder); // Update the reminder with edited data
+      const editReminder = { 
+          createdTimestamp: new Date().getTime(),
+          deleteTime: "",
+          eventInfo: eventInfo,
+          eventName: eventName,
+          eventTime: eventTime,
+       };
+
+      update(editedRemindersRef, editReminder) // Update the reminder with edited data
+      .then(() => {
+        setShowEditModal(false);
+        // Update the state to reflect the changes
+        setReminders((prevReminders) =>
+          prevReminders.map((reminder) =>
+            reminder.userId === userId && reminder.date === date
+              ? { ...reminder, ...editReminder }
+              : reminder
+          ))
+      });
 
       setSelectedReminder(null); // Clear selected reminder
       setEditReminder({}); // Clear the edited reminder
@@ -302,8 +320,9 @@ const ReminderPage = () => {
           </label>
           <input
             className="form-control"
-            type="datetime-local"
-            id="editTime"
+            // type="datetime-local"
+            type="time"
+            id="editTime" 
             value={editReminder?.eventTime || ''}
             onChange={(e) => setEditReminder({ ...editReminder, eventTime: e.target.value })}
           />

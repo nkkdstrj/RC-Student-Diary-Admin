@@ -3,13 +3,11 @@ import "./App.css";
 import { Outlet, Route, Routes } from "react-router-dom";
 import Content from "./Components/ContentPage/Content";
 import File from "./Components/FilePage/FIles";
-import Login from "./Components/LoginPage/login";
-import Sidebar from "./Components/SideBar/sidebar";
-
+import StudentManager from "./Components/FilePage/storagee";
 import Home from "./Components/HomePage/home";
-import ReminderPage from "./Components/ReminderPage/ReminderPage";
-import StudentManager from "./Components/StudentPage/StudentManager";
-
+import Login from "./Components/LoginPage/login";
+import ReminderPage from "./Components/ReminderPage/Reminder";
+import Sidebar from "./Components/SideBar/sidebar";
 const SidebarLayout = () => (
   <>
     <div className="container-scroller">
@@ -36,12 +34,11 @@ function App() {
             <Route path="/content" element={<Content/>}></Route>
             <Route path="/student/manager" element={<StudentManager/>}></Route>
             <Route path="/reminder" element={<ReminderPage/>}></Route>
-         
+        
             <Route path="/file" element={<File />}></Route>
          
           </Route>         
-       
-      
+          
         </Routes>
       </div>
     </>

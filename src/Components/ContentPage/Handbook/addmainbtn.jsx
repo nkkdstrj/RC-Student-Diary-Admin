@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { FaFileAudio, FaFilePdf } from "react-icons/fa";
 import { storage } from "../../../firebase-config";
+import "./content.css";
 function Addmainbtn   ({ onSave, onClose, AddButton })  {
   const [show, setShow] = useState(false);
    const [selectedFile, setSelectedFile] = useState(null);
@@ -330,19 +331,7 @@ const stylebtn={
     <>
       <button
         onClick={handleShow}
-        style={{
-          padding: '8px 16px',
-          backgroundColor: '#24549A',
-          color: 'white',
-          border: 'none',
-          borderRadius: '4px',
-          cursor: 'pointer',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-          transition: 'background-color 0.3s ease',
-          marginLeft: '25px',
-          padding: '10px 35px 10px 35px',
-     
-        }}
+        className="button-add"
       >
         ADD BUTTON
       </button>
@@ -356,14 +345,9 @@ const stylebtn={
         dialogClassName="custom-modal"
       >
         <Modal.Header
-          className="d-flex justify-content-start align-items-center"
-          style={{
-            backgroundColor: '#1e329c',
-            border: 'none',
-            borderRadius: '1.25rem 1.25rem 0 0',
-          }}
+          className="d-flex justify-content-start align-items-center header"
         >
-          <h3 style={{ margin: '0', marginLeft: '0.9375rem' }}>
+          <h3 className="header-h3">
             <span>Add Button</span>
           </h3>
         </Modal.Header>

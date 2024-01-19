@@ -31,18 +31,7 @@ function Addbtn({ handleAddButton }) {
     <>
       <button
         onClick={handleShow}
-        style={{
-          padding: '8px 16px',
-          backgroundColor: '#24549A',
-          color: 'white',
-          border: 'none',
-          borderRadius: '4px',
-          cursor: 'pointer',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-          transition: 'background-color 0.3s ease',
-          marginLeft: '25px',
-          padding: '10px 35px 10px 35px',
-        }}
+       className='button_add'
       >
         ADD BUTTON
       </button>
